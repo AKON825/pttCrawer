@@ -1,0 +1,18 @@
+{
+  "name": "demosample",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "bootstrap": "~3.3.6",
+    "eonasdan-bootstrap-datetimepicker": "~4.15.35",
+    "moment": "~2.10.3",
+    "validator-js": "~3.16.0",
+    "pick-a-color": "~1.2.3",
+    "bootstrap-select": "~1.6.3",
+    "font-awesome": "~4.2.0",
+    "pnotify": "~2.0.1",
+    "jquery-ui": "~1.11.4",
+    "bootstrap-filestyle": "~1.2.1",
+    "bootstrap-social": "~4.12.0"
+  }
+}

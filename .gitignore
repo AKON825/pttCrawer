@@ -1,0 +1,9 @@
+/node_modules
+/public/bower_components
+/logs
+/config/parameters.js
+/config/site.js
+/config/pm2_prod.json
+/config/sequelize.json
+.module-cache
+/sha1
