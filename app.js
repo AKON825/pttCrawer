@@ -4,8 +4,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var session = require('express-session')
-var RedisStore = require('connect-redis')(session)
 
 var app = express();
 
@@ -48,22 +46,6 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
-
-var sessionMiddleware = session({
-  store: new RedisStore({
-    host: config.redis.host,
-    port: config.redis.port,
-    db: config.redis.session.db,
-    ttl: config.redis.session.ttl,
-    prefix: config.redis.session.prefix
-  }),
-  resave: false,
-  saveUninitialized: true,
-  //cookie: { secure: false, maxAge :999999},
-  secret: 'Hit_mE_aH_stUpIddd'
-})
-
-app.use(sessionMiddleware);
 
 // 驗證登入
 app.all('*',  function (req, res, next) {

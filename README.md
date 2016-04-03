@@ -1,30 +1,48 @@
-# demoSample - A sameple chatroom use redis db, node.js, socket.io, expressjs and facebook api
-
-
+# pttCrawer - A sameple for crawing data from ptt(https://www.ptt.cc) with node.js and cheerio.js
 
 ---
 
+## Database
+
+
 ## Install
+
+This demo project depends on [Node.js](http://nodejs.org/),
+
 
 ```sh
 $ npm install
 ```
+
+1.You need to install Mysql on your system first, then Create a database named 'ptt' 
+
+2.Copy the file config/paramaters.js.example to config/paramaters.js
+
+3.And edit the db config like the following 
 ```sh
-$ bower install
+  /* 資料庫 */
+    database: {
+      'host': '127.0.0.1',
+      'name': 'ptt',
+      'user': 'root',
+      'password': 'pwd'
+    }
+```
+Run migration
+```sh
+$ knex migrate:latest
 ```
 
+##  Use
+```sh
+$ node app.js
+```
 
-This demo project depends on [Node.js](http://nodejs.org/),
-and you need to install back-end and front-ent package by [npm](http://npmjs.org/) and [bower](http://bower.io/).
+Then request to http://localhost:3000
 
-Also need to install redis server.
+It will get data from ptt and save the data to mysql
 
-
-##  Purpose
-
-A practice and a sample sharing for who need to use socket.io, redis and facebook api to build a project.
-
-##  Notice
+## Usage
 
 Login function work with the facebook api, if you want test this project on your machine, you need to do some settings at fackbook for developers  
 
@@ -32,18 +50,10 @@ You can find the tricks at  https://developers.facebook.com/docs/facebook-login/
 
 ##  To do list
 
-1.Rewrite the code more modular and keep simple
-
-2.Make the chatroom function more completely
-
-3.Use react.js to rewrite the front-end
-
-4.Make this chatroom to a little game, to bring some fun
-
-## Usage
-
-After login with facebook, then click someone who you want to send message, and type it press enter.
+1.Let the board url arg like "/bbs/cat/index.html" can be edit and save
+2.Use Backend job queue to handle the request requirement 
 
 
+##  Snapshot
 
-![Alt text](https://github.com/AKON825/demoSample/blob/master/public/images/snapshot.jpg?raw=true)
+![Alt text](https://github.com/AKON825/pttCrawer/blob/master/public/images/snapshot.jpg?raw=true)
